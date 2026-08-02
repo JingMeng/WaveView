@@ -1,9 +1,9 @@
-package com.gelitenight.waveview.sample;
+﻿package com.gelitenight.waveview.sample;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.widget.CompoundButtonCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SeekBar;
@@ -126,3 +126,4 @@ public class MainActivity extends AppCompatActivity {
         mWaveHelper.start();
     }
 }
+
