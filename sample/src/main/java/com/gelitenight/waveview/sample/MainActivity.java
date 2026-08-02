@@ -1,8 +1,8 @@
-﻿package com.gelitenight.waveview.sample;
+package com.gelitenight.waveview.sample;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.widget.CompoundButtonCompat;
+import androidx.core.widget.CompoundButtonCompat;
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -31,15 +31,10 @@ public class MainActivity extends AppCompatActivity {
             .setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                    switch (i) {
-                        case R.id.shapeCircle:
-                            waveView.setShapeType(WaveView.ShapeType.CIRCLE);
-                            break;
-                        case R.id.shapeSquare:
+                    if (i == R.id.shapeCircle) {
+                        waveView.setShapeType(WaveView.ShapeType.CIRCLE);
+                    } else if (i == R.id.shapeSquare) {
                             waveView.setShapeType(WaveView.ShapeType.SQUARE);
-                            break;
-                        default:
-                            break;
                     }
                 }
             });
@@ -80,35 +75,30 @@ public class MainActivity extends AppCompatActivity {
             .setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                    switch (i) {
-                        case R.id.colorRed:
+                    if (i == R.id.colorRed) {
                             waveView.setWaveColor(
                                 Color.parseColor("#28f16d7a"),
                                 Color.parseColor("#3cf16d7a"));
                             mBorderColor = Color.parseColor("#44f16d7a");
                             waveView.setBorder(mBorderWidth, mBorderColor);
-                            break;
-                        case R.id.colorGreen:
+                    } else if (i == R.id.colorGreen) {
                             waveView.setWaveColor(
                                 Color.parseColor("#40b7d28d"),
                                 Color.parseColor("#80b7d28d"));
                             mBorderColor = Color.parseColor("#B0b7d28d");
                             waveView.setBorder(mBorderWidth, mBorderColor);
-                            break;
-                        case R.id.colorBlue:
+                    } else if (i == R.id.colorBlue) {
                             waveView.setWaveColor(
                                 Color.parseColor("#88b8f1ed"),
                                 Color.parseColor("#b8f1ed"));
                             mBorderColor = Color.parseColor("#b8f1ed");
                             waveView.setBorder(mBorderWidth, mBorderColor);
-                            break;
-                        default:
+                    } else {
                             waveView.setWaveColor(
                                 WaveView.DEFAULT_BEHIND_WAVE_COLOR,
                                 WaveView.DEFAULT_FRONT_WAVE_COLOR);
                             mBorderColor = Color.parseColor("#44FFFFFF");
                             waveView.setBorder(mBorderWidth, mBorderColor);
-                            break;
                     }
                 }
             });
